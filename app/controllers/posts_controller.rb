@@ -5,10 +5,9 @@ class PostsController < ApplicationController
    #before_action :tag_post, only: [:index, :show, :new, :create, :edit, :update, :destroy]
  
   def index 
-    if current_user     
+    if current_user    
        @posts = Post.of_followed_users(current_user.following).
-       order("created_at DESC").paginate(page: params[:page], per_page: 5) 
-    
+       order("created_at DESC").paginate(page: params[:page], per_page: 5)    
     else   
       redirect_to main_app.public_path 
     end 
@@ -92,7 +91,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:content, :tag_list, images: [])
+    params.require(:post).permit(:context, :tag_list, images: [])
   end
 
 

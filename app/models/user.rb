@@ -62,7 +62,7 @@ class User < ApplicationRecord
    validates :email, presence: true, uniqueness: true, 
              format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
    
-   validate :image_type
+   #validate :image_type
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -134,11 +134,11 @@ class User < ApplicationRecord
   def name_uppercase
     self.name = name.capitalize
   end
-
+=begin
   def image_type 
-      if !image.content_type.in?(%('image/jpeg image/png image/gif'))
-        errors.add(:image, 'File is not JPEF or PNG')
-      end
-    
+    if !image.content_type.in?(%('image/jpeg image/png image/gif'))
+      errors.add(:image, 'File is not JPEF or PNG OR GIF')
+    end    
   end
+=end
 end

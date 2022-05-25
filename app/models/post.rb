@@ -46,7 +46,7 @@ class Post < ApplicationRecord
 
   #validations
   validates :user_id, presence: true   
-  validates :content, length: { minimum: 1 }
+  validates :context, length: { minimum: 1 }
   validate :image_type  
   
 
@@ -58,7 +58,7 @@ class Post < ApplicationRecord
   def image_type 
     images.each do |image|
       if !image.content_type.in?(%('image/jpeg image/png image/gif'))
-        errors.add(:images, 'File is not JPEF or PNG')
+        errors.add(:images, 'File is not JPEF or PNG OR GIF')
       end
     end
   end
