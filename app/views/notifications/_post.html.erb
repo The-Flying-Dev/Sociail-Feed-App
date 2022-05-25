@@ -1,11 +1,11 @@
-<div class="notifications">
+<div class="notification-group">
 
  <% if notification.actor == current_user %>
 
     <%#= link_to notification.actor.username, main_app.profile_path(notification.actor) %> 
     <p>
        you commented on your own post:  
-      <%= link_to notification.second_target.content, main_app.post_path(notification.user, notification.second_target) %>  
+      <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
       saying "
       <%= notification.target.content %>"
     </p>
@@ -15,7 +15,7 @@
     <p>
        <%= link_to notification.actor.username, main_app.profile_path(notification.actor) %>
       has commented on:    
-      <%= link_to notification.second_target.content, main_app.post_path(notification.user, notification.second_target) %>  
+      <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
       saying "
       <%= notification.target.content %>"
    </p>

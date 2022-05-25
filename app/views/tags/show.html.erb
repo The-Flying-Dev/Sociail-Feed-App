@@ -1,7 +1,6 @@
-<h1>Posts Tagged with <%= @tag.name %></h1>
-
-<ul>
-  <% @tag.posts.each do |post| %>
-    <li><%= link_to post.context, main_app.post_path(post) %></li>
-  <% end %>
-</ul>
+<div class="tagged-posts">
+  <h2>Posts Tagged with <%= @tag.name %></h2>  
+    <% @tag.posts.each do |post| %>
+      <p><%= link_to post.context, main_app.post_path(post) %></p>
+    <% end %>  
+</div>

@@ -2,6 +2,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
   before_action :profile_owner, only: [:edit, :update]
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :show_posts, only: [:show]
 
 
   def index 
@@ -9,7 +10,10 @@ class ProfilesController < ApplicationController
   end 
 
   def show     
-    @posts = User.find_by(username: params[:username]).posts.order("created_at DESC")     
+    #@posts = User.find_by(username: params[:username]).posts.order("created_at DESC") 
+    if @posts.nil?
+      redirect_to main_app.public_path
+    end
   end
 
   def edit        
@@ -40,6 +44,10 @@ class ProfilesController < ApplicationController
       redirect_to root_path, 
       alert: "Unauthorized access"
     end
+  end
+
+  def show_posts
+    @posts = User.find_by(username: params[:username]).posts.order("created_at DESC")
   end
 
 end

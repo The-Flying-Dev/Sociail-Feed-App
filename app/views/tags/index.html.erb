@@ -1,5 +1,7 @@
-<ul><% @tags.each do |tag| %></ul>
-
-  <li><%= link_to tag.name, main_app.tag_path(tag) %></li><br />
-<% end %>
+<div class="tagged-posts">
+  <h2>Trending Tags</h2>
+  <p><% @tags.each do |tag| %></p>  
+    <p><%= link_to tag.name, main_app.tag_path(tag) %></p>
+  <% end %>  
+</div>
 

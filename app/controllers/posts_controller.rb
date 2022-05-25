@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   #before_action :authenticate_user! 
    before_action :set_post, only: [:upvote, :downvote]
    before_action :post_owner, only: [:edit, :update, :destroy]
-   #before_action :tag_post, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+   
  
   def index 
     if current_user    

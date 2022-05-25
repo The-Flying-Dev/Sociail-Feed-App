@@ -1,3 +1,18 @@
 // Place all the styles related to the tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.tagged-posts { 
+  text-align: center;
+  justify-content: center;   
+  height: 100vh;
+  background-color: #e4ddee;
+  font-family: 'Roboto', sans-serif;
+  h2 {
+    margin: 7vh 0;
+  }
+
+  p a {
+    font-size: larger;
+    text-decoration: none;    
+  }
+}

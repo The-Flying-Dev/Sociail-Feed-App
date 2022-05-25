@@ -13,72 +13,91 @@
   margin: 5vh 3vw;
 }
 
-.posts {
-  margin: 5vh 0;
-  font-family: 'Roboto', sans-serif;
-  font-size: larger;
+.row {
+  display: flex;
+  width: 95vw;
+  .col1 {
+    flex: 65%;
+    
+    .posts {
+      margin: 5vh 0;
+      font-family: 'Roboto', sans-serif;
+      font-size: larger;
 
-  .userlink {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    text-decoration-line:none;
-    color: #116466
+      .userlink {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 600;
+        text-decoration-line:none;
+        color: #116466
+      }
+    }
+
+    .post-options {
+      margin: 5vh 0;
+    }
+
+
+
+    .comments {
+      h3 {
+        font-family: 'Roboto', sans-serif;
+      }
+      margin-top: 10vh;
+    }
+
+    h5 {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;  
+      text-decoration: underline;
+    }
+
+    .comment-form {
+      margin: 10vh 0;
+
+      #comment-field {
+        margin-bottom: 2vh;
+        font-family: 'Roboto', sans-serif;    
+
+        .comment {
+          width: 30vw;
+          border-radius: 8px; 
+          border: solid 3px #1F2833;  
+          resize: none;
+          outline: none;
+        }
+      }
+    }
+    .btn {    
+      color: #CFC6C7;
+      background-color: #1F2833;
+      font-family: 'Roboto', sans-serif; 
+    }
+
+    .btn:hover, .btn:focus, .btn:visited, .btn:active {
+      color: #CFC6C7;
+    } 
   }
-}
 
-.post-options {
-  margin: 5vh 0;
-}
+  .col2 {
+    flex: 35%;
 
-
-
-.comments {
-  h3 {
-    font-family: 'Roboto', sans-serif;
-  }
-  margin-top: 10vh;
-}
-
-h5 {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;  
-  text-decoration: underline;
-}
-
-.comment-form {
-  margin: 10vh 0;
-
-  #comment-field {
-    margin-bottom: 2vh;
-    font-family: 'Roboto', sans-serif;    
-
-    .comment {
-      width: 30vw;
-      border-radius: 8px; 
-      border: solid 3px #1F2833;  
-      resize: none;
-      outline: none;
+    .row-image {
+      margin-top: 55%;
+      margin-right: 15%;      
+      height: 30vh;
+      width: 30vw;      
+      border-radius: 50%
     }
   }
-
-  .btn {    
-    color: #CFC6C7;
-    background-color: #1F2833;
-    font-family: 'Roboto', sans-serif; 
-  }
-
-  .btn:hover, .btn:focus, .btn:visited, .btn:active {
-    color: #CFC6C7;
-  } 
-
 }
 
 .post-form {   
   display: flex;
   justify-content: center;   
-  height: 90vh;
+  height: 100vh;
   background-color: #BAB2B5;
-
+  
+  
   #post-field {
     margin-top: 8vh;
     margin-bottom: 2vh;
@@ -94,9 +113,21 @@ h5 {
       outline: none;
     }
 
+    .tag-content {
+      font-size: small;
+      width: 30vw;
+      height: 8vh;
+      border-radius: 8px; 
+      border: solid 3px #1F2833;  
+      resize: none;
+      outline: none;
+    }
+
     .image-content {
       margin: 1vh 0;
     }
   }
+
+ 
 }
 
