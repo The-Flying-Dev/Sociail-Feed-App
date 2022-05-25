@@ -9,7 +9,7 @@
           <% @post.tags.each do |tag| %>
             <%= link_to '#' + tag.name, main_app.tag_path(tag) %>
           <% end %>
-        </p> <br />
+        </p> 
         
         <br />    
     
@@ -18,7 +18,7 @@
             <%= image_tag(@post.images[image], class: "image-show-page" ) %>  
           <% end %>
         <% end %>
-        <br />
+       
         by <%= link_to @post.user.username, main_app.profile_path(@post.user.username), class: "userlink" %>
     
       </div>         
