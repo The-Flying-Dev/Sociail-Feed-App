@@ -1,0 +1,20 @@
+<div class="post-form">  
+  <%= form_for @user, url: {action: "update"} do | f | %> 
+  <h1>Editing My Profile</h1> 
+
+    <div class="field" id="post-field">
+      <%#= f.label :bio, "Describe yourself" %>
+      <%= f.text_field :bio, placeholder: "Let your followers know more about you ...", class: "post-content" %>
+    </div>
+
+    <div class="field" id="post-field"> 
+      <%= f.label :image, "Add your photo here" %>   
+      <%= f.file_field :image, class: "image-content"  %>    
+    </div>
+
+    <%= f.submit "Update Profile", class: "btn btn-dark" %>
+    <%= link_to 'Cancel', :back, class: "btn btn-light" %>
+
+  <% end %>
+
+</div>

@@ -1,0 +1,27 @@
+<div class="post-form">
+  <%= form_for @post do | f | %>
+
+
+  <div class="field" id="post-field">
+    <%#= f.label :content %> <br />
+    <%= f.text_field :content, placeholder: "Say something. . .", required: true, class: "post-content" %> <br /><br />
+    <%= f.label :tag_list %><br />
+    <%= f.text_field :tag_list %>
+  </div>
+
+  <div class="field" id="post-field"> 
+    <%= f.label :images, "Add your photos here" %>   <br />
+    <%= f.file_field :images, multiple: true, class: "image-content" %><br />
+    <%= f.file_field :images, multiple: true, class: "image-content" %><br />
+    <%= f.file_field :images, multiple: true, class: "image-content" %><br />
+    <%= f.file_field :images, multiple: true, class: "image-content" %><br />
+    <%= f.file_field :images, multiple: true, class: "image-content" %><br />
+  </div>
+
+  <%= f.submit class: "btn btn-dark" %>
+  <%= link_to 'Go Back', :back, class:"btn btn-light" %>
+
+<% end %>
+  
+</div>
+

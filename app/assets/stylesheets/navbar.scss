@@ -1,0 +1,38 @@
+.navbar {
+  background-color: #0B0C10;
+  font-family: 'Roboto', sans-serif;  
+  
+  #logo {
+    margin-left: 4vw;
+  }
+  .navbar-toggler{
+    background-color: #66FCF1;
+  }
+  .navbar-nav a{    
+    text-decoration-line:none;
+    padding: 1vh 1vw;    
+  }
+
+  .navbar a:hover, a:focus, a:visited, a:active {
+    color: #66FCF1;
+  } 
+
+  .navbtn {    
+    color: #66FCF1;
+  }
+
+  .form_class {
+    margin-left: 10vw;
+    input[type="submit"] {
+      background-color: #0B0C10;
+      border-radius: 0.354em;
+      border: solid thin #66FCF1;
+      color: #66FCF1;     
+      
+    }
+    textarea:focus, input:focus{
+      outline: none;
+    }
+  }
+  
+}
