@@ -4,8 +4,7 @@
       <div class="posts">
         <%= @post.context %> <br />
     
-        <p>
-          Tags:
+        <p>          
           <% @post.tags.each do |tag| %>
             <%= link_to '#' + tag.name, main_app.tag_path(tag) %>
           <% end %>
@@ -50,14 +49,13 @@
     
       <!--All Comments-->
       <div class="comments">
-        <h3>Comments</h3>
+        <h4>Comments</h4>
         <%= render @post.comments %>
        </div>      
     
       <!-- form to create comment -->
     
-      <div class="comment-form">
-        <h5>Add Comment</h5>
+      <div class="comment-form">        
     
         <%= form_for @post.comments.build do | f | %>  
     

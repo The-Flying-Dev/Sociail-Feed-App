@@ -7,7 +7,8 @@
        you commented on your own post:  
       <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
       saying "
-      <%= notification.target.content %>"
+      <%= notification.target.content %>" <br />
+      on the
     </p>
     
     <% else %> 
@@ -17,9 +18,10 @@
       has commented on:    
       <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
       saying "
-      <%= notification.target.content %>"
+      <%= notification.target.content %>" <br />
+      on the
    </p>
 
     <% end %>
 
- </div>
+</div>

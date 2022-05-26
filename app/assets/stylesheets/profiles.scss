@@ -65,11 +65,10 @@
 }
 
 .profile-search-pg {
-  background-color: #D9B08C;
-  width: 100vw;
-  height: 100vw;
+  background-color: #D9B08C;  
+  height: 90vw;
   .panel-body{
-    margin: 10vh 10vw; 
+    padding: 10vh 10vw; 
     
 
     .users-img {
@@ -89,6 +88,6 @@
       color: #116466;
     } 
     
-    
+  
   }
 }

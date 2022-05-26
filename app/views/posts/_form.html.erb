@@ -4,11 +4,12 @@
 
     <div class="field" id="post-field">      
       <%= f.text_field :context, placeholder: "Say something. . .", required: true, class: "post-content" %> <br /><br />      
-      <%= f.text_field :tag_list, placeholder: "Each tag separated by a comma", class: "tag-content" %>
-    </div>
-
-    <div class="field" id="post-field"> 
-      <%= f.label :images, "Add your photos here" %>   <br />
+      <%= f.text_field :tag_list, placeholder: "comma between each tag", class: "tag-content" %>
+      
+      <br />
+      <br />
+     
+      <%= f.label :images, "Add your photos here" %> <br />  
       <%= f.file_field :images, multiple: true, class: "image-content" %><br />
       <%= f.file_field :images, multiple: true, class: "image-content" %><br />
       <%= f.file_field :images, multiple: true, class: "image-content" %><br />
@@ -19,10 +20,9 @@
     <div class="post-btns">
       <%= f.submit class: "btn btn-dark" %>
       <%= link_to 'Go Back', :back, class:"btn btn-light" %>
-    </div>
-    
+    </div>     
     
   <% end %>
   
-</div><br />
+</div>
 
