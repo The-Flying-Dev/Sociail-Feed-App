@@ -123,7 +123,7 @@ class User < ApplicationRecord
   # To search for users
   def self.search(term)
     if term 
-      where('username::text LIKE ?',"%#{term}%")    
+      where('name::text LIKE ?',"%#{term}%")    
   end
   
  
