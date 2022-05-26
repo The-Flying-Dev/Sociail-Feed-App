@@ -123,12 +123,13 @@ class User < ApplicationRecord
   # To search for users
   def self.search(term)
     if term 
-      where('name LIKE?',"%#{term}%")
+      where('name::text LIKE ?',"%#{term}%")
     elsif term 
-      where('username LIKE?',"%#{term}%")
+      where('username::text LIKE ?',"%#{term}%")
     end
   end
   
+ 
   private 
 
   def name_uppercase
