@@ -5,7 +5,7 @@ ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.7', '>= 5.2.7.1'
-gem 'sqlite3'
+#gem 'sqlite3'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -23,7 +23,6 @@ gem 'will_paginate', '~> 3.3', '>= 3.3.1'
 gem 'acts_as_votable', '~> 0.13.2'
 gem 'notifications', '~> 1.1'
 
-
 ###############################################
 
 
@@ -39,7 +38,7 @@ group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'annotate', '~> 3.2' #PROJECT GEM
-  #gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :test do
@@ -48,6 +47,10 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :production do
+  gem 'pg'
 end
 
 
