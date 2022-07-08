@@ -1,27 +1,34 @@
-<div class="notification-group">
+<% unless notification %>
+   <div class="notification-group">
 
- <% if notification.actor == current_user %>
+   <% if notification.actor == current_user %>
 
-    <%#= link_to notification.actor.username, main_app.profile_path(notification.actor) %> 
-    <p>
-       you commented on your own post:  
-      <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
-      saying "
-      <%= notification.target.content %>" <br />
-      on the
-    </p>
-    
-    <% else %> 
-    
-    <p>
-       <%= link_to notification.actor.username, main_app.profile_path(notification.actor) %>
-      has commented on:    
-      <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
-      saying "
-      <%= notification.target.content %>" <br />
-      on the
-   </p>
+      <%#= link_to notification.actor.username, main_app.profile_path(notification.actor) %> 
+      <p>
+         you commented on your own post:  
+         <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
+         saying "
+         <%= notification.target.content %>" <br />
+         on the
+      </p>
+      
+      <% else %> 
+      
+      <p>
+         <%= link_to notification.actor.username, main_app.profile_path(notification.actor) %>
+         has commented on:    
+         <%= link_to notification.second_target.context, main_app.post_path(notification.user, notification.second_target) %>  
+         saying "
+         <%= notification.target.content %>" <br />
+         on the
+      </p>
 
-    <% end %>
+      <% end %>
+   </div>
+<% else %> 
 
-</div>
+   <div class="notification-group">
+      <h5>You have no new notifications</h5>
+   </div>
+
+<% end %>
