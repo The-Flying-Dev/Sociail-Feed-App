@@ -11,23 +11,22 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 
-        <% if user_signed_in? %>    
+        <% if user_signed_in? %> 
           
           <a><%= link_to "Add Post", main_app.new_post_path, class: "navbtn" %></a>          
           <a><%= link_to "My Feed", main_app.root_path, class: "navbtn" %></a>
           <a><%= link_to "My Profile --- #{current_user.username}", main_app.profile_path(current_user.username), class: "navbtn" %> </a>                   
-          <a><%= link_to pluralize(Notification.unread_count(current_user), 'Notification'), notifications_path, class: "navbtn" %></a> 
+          <a><%= link_to pluralize(Notification.unread_count(current_user), 'Notification'), notifications_path, class: "navbtn" %></a>
           <a><%= link_to "Logout", main_app.destroy_user_session_path, method: :delete, class: "navbtn" %></a>          
-          <a class="search"><%= render 'shared/search' %></a>  
-       
-         
+          <a class="search"><%= render 'shared/search' %></a> 
+
         <% else %>
 
           <a><%= link_to "Login", main_app.new_user_session_path, class: "navbtn" %></a>
-          <a><%= link_to "Create Account", main_app.new_user_registration_path, class: "navbtn" %></a> 
-                
+          <a><%= link_to "Create Account", main_app.new_user_registration_path, class: "navbtn" %></a>
 
         <% end %>
+        
       </div>
     </div>
   </div>

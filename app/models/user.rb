@@ -42,6 +42,7 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following 
   
+  has_many :friendships, dependent: :destroy
  
   def follow(user_id)
     following_relationships.create(following_id: user_id)
@@ -55,12 +56,14 @@ class User < ApplicationRecord
    #validations
    validate :validate_username #custom method
    validates :name, presence: true, uniqueness: true
-   validates :username,  presence: true, length: { minimum: 4, maximum: 15 }, case_sensitive: false,
+   validates :username,  presence: true, uniqueness: true, length: { minimum: 4, maximum: 15 }, case_sensitive: false,
        format: { with: /^[a-zA-Z0-9_\.]*$/ , multiline: true }  
    validates :email, presence: true, uniqueness: true, 
              format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
    
    #validate :image_type
+
+
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable

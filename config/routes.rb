@@ -1,5 +1,6 @@
 Rails.application.routes.draw do 
 
+  get 'rooms/index'
   #gem 'notifications', '~> 1.1'
   mount Notifications::Engine => "/notifications"
 
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
       put 'dislike', to: 'posts#downvote'      
     end
   end
+  
   resources :tags   
   
   get 'public', to: 'feed#index', as: :public
