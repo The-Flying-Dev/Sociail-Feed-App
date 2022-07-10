@@ -41,8 +41,6 @@ class User < ApplicationRecord
 
   has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
   has_many :following, through: :following_relationships, source: :following 
-  
-  has_many :friendships, dependent: :destroy
  
   def follow(user_id)
     following_relationships.create(following_id: user_id)
@@ -51,17 +49,17 @@ class User < ApplicationRecord
   def unfollow(user_id)
     following_relationships.find_by(following_id: user_id).destroy
   end
- 
 
-   #validations
-   validate :validate_username #custom method
-   validates :name, presence: true, uniqueness: true
-   validates :username,  presence: true, uniqueness: true, length: { minimum: 4, maximum: 15 }, case_sensitive: false,
-       format: { with: /^[a-zA-Z0-9_\.]*$/ , multiline: true }  
-   validates :email, presence: true, uniqueness: true, 
-             format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
-   
-   #validate :image_type
+ 
+  #validations
+  validate :validate_username #custom method
+  validates :name, presence: true, uniqueness: true
+  validates :username,  presence: true, uniqueness: true, length: { minimum: 4, maximum: 15 }, case_sensitive: false,
+      format: { with: /^[a-zA-Z0-9_\.]*$/ , multiline: true }  
+  validates :email, presence: true, uniqueness: true, 
+            format: { with: URI::MailTo::EMAIL_REGEXP, message: "must be a valid email address" }
+  
+  #validate :image_type
 
 
 
@@ -121,12 +119,11 @@ class User < ApplicationRecord
     end
   end
 
-  # To search for users
+  # To search for users  
+
   def self.search(term)
     if term 
-      where('name::text LIKE ?',"%#{term}%")
-    elsif term 
-      where('username::text LIKE ?',"%#{term}%")
+      where('username LIKE?',"%#{term}%")        
     end
   end
   
@@ -136,6 +133,7 @@ class User < ApplicationRecord
   def name_uppercase
     self.name = name.capitalize
   end
+
 =begin
   def image_type 
     if !image.content_type.in?(%('image/jpeg image/png image/gif'))
@@ -143,4 +141,5 @@ class User < ApplicationRecord
     end    
   end
 =end
+
 end

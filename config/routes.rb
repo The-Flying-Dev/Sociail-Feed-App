@@ -1,6 +1,5 @@
 Rails.application.routes.draw do 
 
-  get 'rooms/index'
   #gem 'notifications', '~> 1.1'
   mount Notifications::Engine => "/notifications"
 
@@ -11,9 +10,9 @@ Rails.application.routes.draw do
       put 'like', to: 'posts#upvote'
       put 'dislike', to: 'posts#downvote'      
     end
-  end
-  
-  resources :tags   
+  end  
+  resources :tags
+  #resources :users
   
   get 'public', to: 'feed#index', as: :public
   get 'profiles/index'
@@ -23,8 +22,6 @@ Rails.application.routes.draw do
 
   post ':username/follow_user', to: 'relationships#follow_user', as: :follow_user
   post ':username/unfollower_user', to: 'relationships#unfollow_user', as: :unfollow_user
-
-
 
   root 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

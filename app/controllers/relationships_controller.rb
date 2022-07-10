@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
   def follow_user
     @user = User.find_by!(username: params[:username])
     if current_user.follow @user.id 
-      redirect_to root_path,
+      redirect_to main_app.root_path,
       notice: "Successfully following"
     end
   end
@@ -12,7 +12,7 @@ class RelationshipsController < ApplicationController
   def unfollow_user
     @user = User.find_by!(username: params[:username])
     if current_user.unfollow @user.id 
-      redirect_to root_path,
+      redirect_to main_app.root_path,
       notice: "Not following anymore"
     end
   end

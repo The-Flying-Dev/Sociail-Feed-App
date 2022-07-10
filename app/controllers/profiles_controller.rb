@@ -10,7 +10,7 @@ class ProfilesController < ApplicationController
   end 
 
   def show     
-    #@posts = User.find_by(username: params[:username]).posts.order("created_at DESC") 
+    #@posts = User.find_by(username: params[:username]).posts.order("created_at DESC")     
     if @posts.nil?
       redirect_to main_app.public_path
     end
